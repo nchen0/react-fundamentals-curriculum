@@ -8,6 +8,14 @@
   background-color: #5cb85c;
   border-color: #4cae4c;
   color: white;
+  width: 110px;
+  height: 40px;
+  margin-left: 10px;
+}
+.navbar input {
+  width: 220px;
+  height: 50px;
+  padding-left: 10px;
 }
 
 .left-Header {
