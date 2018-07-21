@@ -1,10 +1,9 @@
 import React from "react";
 import "./Main.css";
-import axios from "axios";
 
 class Main extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       city: "",
       URL: "",
@@ -17,7 +16,7 @@ class Main extends React.Component {
   };
 
   submitCity = event => {
-    event.preventDefault();
+    /*event.preventDefault();
     axios
       .get(
         `http://api.openweathermap.org/data/2.5/weather?q=${
@@ -33,7 +32,10 @@ class Main extends React.Component {
       })
       .catch(err => {
         console.log("");
-      });
+      });*/
+    event.preventDefault();
+    this.props.handleSubmitCity(this.state.city);
+    this.setState({ city: "" });
   };
 
   render() {
