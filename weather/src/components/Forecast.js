@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import DayWeather from "./DayWeather";
 
 class Forecast extends React.Component {
   constructor() {
@@ -29,17 +30,26 @@ class Forecast extends React.Component {
       });
   }
   render() {
-    console.log(
-      "this.state.forecastData is: ",
-      this.state.forecastData
-    );
+    console.log("this.state.forecastData is: ", this.state.forecastData);
     return (
       <div>
         {/* To prevent having to set a default prop of forecastData.city.name of "", we can have the below fire only after the data is received, so we don't have to worry about having to set a default / not having anything to map, or getting an error on display. */}
         {this.state.fetching === true ? (
           <p>Loading...</p>
         ) : (
-          <h1>{this.state.forecastData.city.name}</h1>
+          <div>
+            <h1>{this.state.forecastData.city.name}</h1>
+
+            <div>
+              {this.state.forecastData.list.map(lis => {
+                return (
+                  <div key={lis.dt}>
+                    <DayWeather day={lis} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         )}
       </div>
     );
