@@ -11,7 +11,7 @@ const DayWeather = props => {
     <div>
       <img
         className="weather"
-        src={`/app/images/weather-icons/${icon}.svg`}
+        src={`./images/weather-icons/${icon}.svg`}
         alt="Weather"
       />
       <p>{date}</p>
