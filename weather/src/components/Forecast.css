@@ -1,0 +1,15 @@
+.days {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.day {
+  height: 500px;
+  width: 300px;
+}
+
+.day img {
+  width: 240px;
+  height: 200px;
+}

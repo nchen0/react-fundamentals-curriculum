@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import { Route } from "react-router-dom";
 import Forecast from "./components/Forecast";
+import Details from "./components/Details";
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
           }}
         />
         <Route path="/forecast" component={Forecast} />
+        <Route path="/details" component={Details} />
       </div>
     );
   }

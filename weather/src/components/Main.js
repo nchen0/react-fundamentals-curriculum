@@ -41,18 +41,11 @@ class Main extends React.Component {
   render() {
     return (
       <div className="center">
-        <div className="center-text">
-          Enter a City and State
-        </div>
+        <div className="center-text">Enter a City and State</div>
         <div>
           <form className="main-form">
-            <input
-              onChange={this.inputCity}
-              placeholder="St. George, Utah"
-            />
-            <button onClick={this.submitCity}>
-              Get Weather
-            </button>
+            <input onChange={this.inputCity} placeholder="St. George, Utah" />
+            <button onClick={this.submitCity}>Get Weather</button>
           </form>
         </div>
       </div>

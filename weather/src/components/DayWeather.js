@@ -9,12 +9,14 @@ const DayWeather = props => {
 
   return (
     <div>
-      <img
-        className="weather"
-        src={`./images/weather-icons/${icon}.svg`}
-        alt="Weather"
-      />
-      <p>{date}</p>
+      <div onClick={props.onClick}>
+        <img
+          className="weather"
+          src={`./images/weather-icons/${icon}.svg`}
+          alt="Weather"
+        />
+        <p>{date}</p>
+      </div>
     </div>
   );
 };

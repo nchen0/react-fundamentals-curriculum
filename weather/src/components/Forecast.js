@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DayWeather from "./DayWeather";
+import "./Forecast.css";
 
 class Forecast extends React.Component {
   constructor() {
@@ -29,6 +30,14 @@ class Forecast extends React.Component {
         console.log("");
       });
   }
+
+  handleClick = city => {
+    this.props.history.push({
+      pathname: "/details/" + this.state.forecastData.city.name,
+      state: city
+    });
+  };
+
   render() {
     console.log("this.state.forecastData is: ", this.state.forecastData);
     return (
@@ -38,13 +47,16 @@ class Forecast extends React.Component {
           <p>Loading...</p>
         ) : (
           <div>
-            <h1>{this.state.forecastData.city.name}</h1>
+            <h1>{this.state.forecastData.city.name} 5-Day Forecast</h1>
 
-            <div>
+            <div className="days">
               {this.state.forecastData.list.map(lis => {
                 return (
-                  <div key={lis.dt}>
-                    <DayWeather day={lis} />
+                  <div className="day" key={lis.dt}>
+                    <DayWeather
+                      onClick={() => this.handleClick(lis)}
+                      day={lis}
+                    />
                   </div>
                 );
               })}

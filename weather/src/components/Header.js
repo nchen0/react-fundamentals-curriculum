@@ -1,17 +1,15 @@
 import React from "react";
 import { Navbar } from "reactstrap";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <Navbar>
-      <div className="left-Header">Clever Title</div>
-      <div className="right-header">
-        <form>
-          <input placeholder="St. George, Utah" />
-          <button>Get Weather</button>
-        </form>
-      </div>
+      <Link to="/">
+        <div className="left-Header">Forecast</div>
+      </Link>
+      <div className="right-header" />
     </Navbar>
   );
 };
